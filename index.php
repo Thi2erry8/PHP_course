@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-       <? echo'Hello World' ?>
+       <? echo'Hello Word' ?>
 </body>
 </html>
