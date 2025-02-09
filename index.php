@@ -8,9 +8,8 @@
 <body>
       
        <?php 
-       $name= 'Jonathan';
-       
-       echo'Bonjour  '.$name; 
+        
+       echo 'Bonjour'.$name; 
        
        
        ?>
