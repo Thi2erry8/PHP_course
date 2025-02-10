@@ -8,12 +8,11 @@
 <body>
       
        <?php 
-       $firstName = "Jeremy";
-       $lastName = "McPeak";
-
-       if($firstName =='Jeremy' ){
-        echo "<script>console.log('True')</script>";
-       }
+            $guitar = [ 'prs'    => 'vela',
+                        'gibson' => 'Explorer',
+                        'fender' => 'strat' ];
+        echo $guitar['gibson']
+            
        ?>
        
 </body>
