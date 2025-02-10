@@ -8,10 +8,12 @@
 <body>
       
        <?php 
-        
-       echo 'Bonjour'.$name; 
-       
-       
+       $firstName = "Jeremy";
+       $lastName = "McPeak";
+
+       if($firstName =='Jeremy' ){
+        echo "<script>console.log('True')</script>";
+       }
        ?>
        
 </body>
