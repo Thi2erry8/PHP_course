@@ -26,7 +26,36 @@
 
   <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">PHP Fundamentals: <?= $title; ?></a>
+      </div>
+    </nav>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">My Favorite Guitars</h1>
+        </div>
+      </div>
+      
+      <div class="row">
+           <table class="table table-striped">
+                   <?php
+                        foreach($favoriteGuitars as $guitar){
+                            echo"<tr><td>$guitar</td></tr>";
+                        }
+                   ?>
+                   <?php 
+                        foreach($kvpGuitars as $key => $legend){
+                            echo"<tr><td>$key</td><td>$legend</td></tr>";
+                        };
+                   
+                   ?>
+            </table>  
+      </div>
+
+    </div>
   </body>
 
 </html>
