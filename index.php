@@ -1,17 +1,12 @@
 <?php
-    $title = 'foreach Loop';
+    $title = 'for Loop';
 
     $favoriteGuitars = [
         'Vela',
         'Explorer',
         'Strat'
     ];
-
-    $kvpGuitars = [
-        'prs' => 'Vela',
-        'gibson' => 'Explorer',
-        'fender' => 'Strat'
-    ]; 
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,15 +37,10 @@
       <div class="row">
            <table class="table table-striped">
                    <?php
-                        foreach($favoriteGuitars as $guitar){
-                            echo"<tr><td>$guitar</td></tr>";
+                        for ($i=0; $i < count($favoriteGuitars); $i++) { 
+                          $guitars = $favoriteGuitars[$i];
+                            echo"<tr><td>$guitars</td></tr>";
                         }
-                   ?>
-                   <?php 
-                        foreach($kvpGuitars as $key => $legend){
-                            echo"<tr><td>$key</td><td>$legend</td></tr>";
-                        };
-                   
                    ?>
             </table>  
       </div>
