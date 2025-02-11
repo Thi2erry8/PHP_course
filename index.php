@@ -37,10 +37,17 @@
       <div class="row">
            <table class="table table-striped">
                    <?php
-                        for ($i=0; $i < count($favoriteGuitars); $i++) { 
+                    $i = 0;
+                    while($i < count($favoriteGuitars)){
+                        $guitars = $favoriteGuitars[$i];
+                        echo"<tr><td>$guitars</td></tr>";
+                        
+                        $i++;
+                    };
+                        /* for ($i=0; $i < count($favoriteGuitars); $i++) { 
                           $guitars = $favoriteGuitars[$i];
                             echo"<tr><td>$guitars</td></tr>";
-                        }
+                        } */
                    ?>
             </table>  
       </div>
