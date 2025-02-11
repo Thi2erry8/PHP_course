@@ -11,7 +11,7 @@
             $guitar = [ 'prs'    => 'vela',
                         'gibson' => 'Explorer',
                         'fender' => 'strat' ];
-        echo $guitar['gibson']
+        echo $guitar['gibson' ]
             
        ?>
        
