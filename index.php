@@ -1,11 +1,17 @@
 <?php
-    $title = 'funtions';
+    $title = 'scope ';
     
-    function sum($a,$b){
-         return $a+$b;
-    }
-    
-    $result = sum(1,2);
+    $guitars =[
+        ['name' => 'Vela','manufacturer' => 'PRS'],
+        ['name' => 'Exporer','manufacturer' => 'Gibson'],
+        ['name' => 'Strat','manufacturer' => 'Fender']
+    ];
+         function pluck(){
+
+    }; 
+    $guitars_names= pluck($guitars,'name');
+
+
  
 ?>
 <!DOCTYPE html>
@@ -36,19 +42,8 @@
       
       <div class="row">
            <table class="table table-striped">
-                  <?= $result;?>
                   <?php
-                    /* $i = 0;
-                    while($i < count($favoriteGuitars)){
-                        $guitars = $favoriteGuitars[$i];
-                        echo"<tr><td>$guitars</td></tr>";
-                        
-                        $i++;
-                    }; */
-                        /* for ($i=0; $i < count($favoriteGuitars); $i++) { 
-                          $guitars = $favoriteGuitars[$i];
-                            echo"<tr><td>$guitars</td></tr>";
-                        } */
+
                    ?>
             </table>  
       </div>
