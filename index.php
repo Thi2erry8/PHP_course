@@ -2,8 +2,14 @@
     $title = ' includes';
    
     include('./inc/header.php');
-
-    $guitars =[
+   $category = filter_input(INPUT_GET, 'category', FILTER_VALIDATE_INT); ;
+   $limit = filter_input(INPUT_GET,'limit', FILTER_VALIDATE_INT);
+    
+   if($category == false || $limit == false){
+      die();
+   }
+   
+   $guitars =[
         ['name' => 'Vela','manufacturer' => 'PRS'],
         ['name' => 'Exporer','manufacturer' => 'Gibson'],
         ['name' => 'Strat','manufacturer' => 'Fender']
@@ -25,15 +31,14 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h1 class="mt-5">My Favorite Guitars</h1>
+          <h1 class="mt-5"><?= $title; ?></h1>
         </div>
       </div>
       
       <div class="row">
            <table class="table table-striped">
-                  <?php
-
-                   ?>
+                  showing category: <?= $category ;?> ; 
+                  Limit <?= $limit ; ?>
             </table>  
       </div>
 
