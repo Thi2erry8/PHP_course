@@ -6,8 +6,10 @@
         ['name' => 'Exporer','manufacturer' => 'Gibson'],
         ['name' => 'Strat','manufacturer' => 'Fender']
     ];
-         function pluck(){
-
+         function pluck($arr,$key){
+            $result =  array_map(function($item)use($key){
+               return $item[$key]; 
+            },$arr);
     }; 
     $guitars_names= pluck($guitars,'name');
 
