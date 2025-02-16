@@ -1,28 +1,16 @@
 <?php
-    $title = ' includes';
+    $title = ' Post_request';
    
     include('./inc/header.php');
-   $category = filter_input(INPUT_GET, 'category', FILTER_VALIDATE_INT); ;
-   $limit = filter_input(INPUT_GET,'limit', FILTER_VALIDATE_INT);
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+      $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+
+      if($email == false){
+        $status = 'Please enter a valid email address';
+      }
+    }
     
-   if($category == false || $limit == false){
-      die();
-   }
-   
-   $guitars =[
-        ['name' => 'Vela','manufacturer' => 'PRS'],
-        ['name' => 'Exporer','manufacturer' => 'Gibson'],
-        ['name' => 'Strat','manufacturer' => 'Fender']
-    ];
-         function pluck($arr,$key){
-            $result =  array_map(function($item)use($key){
-               return $item[$key]; 
-            },$arr);
-
-            return $result;
-    }; 
-    $guitars_names= pluck($guitars,'name');
-
 
  
 ?>
@@ -36,10 +24,22 @@
       </div>
       
       <div class="row">
-           <table class="table table-striped">
-                  showing category: <?= $category ;?> ; 
-                  Limit <?= $limit ; ?>
-            </table>  
+            <form action ="" method="POST">
+                   
+                    <div class="form-group">
+                          <label for="email">Email:</label>
+                          <input class="form-control" type="text" name="email" id="email"/>
+                    </div>
+                    
+                    <div class="form-group">
+                          <label for="password">Password</label>
+                          <input class="form-control" type="password" name="password" id="password"/>
+                    </div> 
+                    
+                    <div class="form-group">
+                          <input type="submit" value="Login" />
+                    </div>
+            </form>
       </div>
 
     </div>
