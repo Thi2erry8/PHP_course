@@ -2,16 +2,24 @@
     $title = ' Post_request';
    
     include('./inc/header.php');
+    include('./inc/function.php');
+    include('./inc/config.php');
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
       $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-
+      $password = $_POST['password'] ;
       if($email == false){
         $status = 'Please enter a valid email address';
       }
     }
     
-
+    if(authentification_user($email,$password)){
+      $_SESSION['email'] = $email ;
+      redirect('admin.php');
+      die();
+    } else{
+    $status = "The provided credentials didn't wwork";
+   }
  
 ?>
 
