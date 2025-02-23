@@ -5,7 +5,8 @@
     require_once('./inc/login.php');
    
     include('./inc/header.php');
-    get_data();
+   $json = get_data();
+   $term = json_decode($json);
 ?>
 
 
