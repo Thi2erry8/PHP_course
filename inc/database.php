@@ -21,5 +21,14 @@
             }
             /* echo $email .$password ; */
          }
+       //
+       $servername = "127.0.0.1";//'127.0.0.1'localhost
+       $username = "root";
+       $password = ""; // Laissez vide si vous utilisez XAMPP
+       $dbname = "myfirstdatabase";
+       $conn = mysqli_connect( $servername,$username,$password,$dbname) ;
 
+       if(!$conn){
+          echo "Connection error: " .mysqli_connect_error();
+       }
 ?>
