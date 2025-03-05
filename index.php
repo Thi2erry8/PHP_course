@@ -1,46 +1,45 @@
 <?php
-    $title = ' Post_request';
-   
-
-    require_once('./inc/login.php');
-   
-    include('./inc/header.php');
-   $json = get_data();
-   $term = json_decode($json);
-?>
-
-
-<div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1 class="mt-5">POST Input</h1>
-        </div>
-      </div>
-      <div class="row">
-        <form action="" method="POST">
-          <div class="form-group"><div class="container">
-      <div class="row">
-        <form action="" method="POST">
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input class="form-control" type="text" name="email" id="email" />
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input class="form-control" type="password" name="password" id="password" />
-          </div>
-          <div class="from-group">
-            <input type="submit" name="login" value="Login" />
-          </div>
-        </form>
-      </div>
-      <div class="row">
-        <?php 
-          if (isset($status)) {
-            echo $status;
+     if(isset($_POST['submit'])){
+        /// Check email
+       if(empty($_POST['email'])){
+         echo '<script>alert("email empty")</script>';
+       }else {
+          $email = $_POST['email'];
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            echo '<script>alert("email incorrect")</script>';
           }
-        ?>
-      </div>
-    </div>
+       }
+       
+        if(empty($_POST['password'])){
+          echo '<script>alert("password empty")</script>' ;
+          }else {
+           $password = $_POST['password'];
+           /* echo $password; */
+          /*  if(!filter_var($email, FILTER_VALIDATE_PASSWORD)){
+             echo '';           
+            } */
+        }
+        /* echo $email .$password ; */
+     }
 
-<?php /* include('./../inc/footer.php'); */ ?> 
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+       <form action="./index.php" method="post">
+        <label for="email"> your email</label>
+              <input type="email" name="email" id="">
+        <label for="password">Your password</label>
+              <input type="password" name="password" id="">
+
+              <input id="submit" type="submit" name="submit" value="submit">
+       </form>
+</body>
+</html>
