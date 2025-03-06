@@ -31,4 +31,25 @@
        if(!$conn){
           echo "Connection error: " .mysqli_connect_error();
        }
+
+       //write query for all utilisateur
+       $sql = 'SELECT email , id FROM utilisateur';
+       
+
+       // make query & get result
+       $result = mysqli_query($conn, $sql);
+       
+       // ftech the resultingrows as an array
+       $utilisateur = mysqli_fetch_all($result , MYSQLI_ASSOC) ;      
+      
+       // free result from memory
+       mysqli_free_result($result);
+
+       // close connection
+       mysqli_close($conn);
+       
+       // fetch the resulting rows as an array
+
+       
+        print_r($utilisateur);
 ?>
