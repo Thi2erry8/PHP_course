@@ -47,5 +47,6 @@
        // close connection
        mysqli_close($conn);
        
-        print_r($utilisateurs); 
+       /*  print_r($utilisateurs); */ 
+
 ?>
