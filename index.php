@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
  include('./inc/database.php')
 
 
@@ -20,5 +23,13 @@
 
               <input id="submit" type="submit" name="submit" value="submit">
        </form>
+
+       <?php foreach($utilisateurs as $utilisateur){ ?>
+                 <div class="data">
+                         <h1><?php echo htmlspecialchars($utilisateur['id']); ?></h1>
+                         <p><?php echo htmlspecialchars($utilisateur['email']); ?></p>
+                 </div>
+
+        <?php } ?>
 </body>
 </html>
