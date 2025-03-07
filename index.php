@@ -24,12 +24,12 @@ ini_set('display_errors', 1);
               <input id="submit" type="submit" name="submit" value="submit">
        </form>
 
-       <?php foreach($utilisateurs as $utilisateur){ ?>
+       <?php foreach($utilisateurs as $utilisateur): ?>
                  <div class="data">
                          <h1><?php echo htmlspecialchars($utilisateur['id']); ?></h1>
                          <p><?php echo htmlspecialchars($utilisateur['email']); ?></p>
                  </div>
 
-        <?php } ?>
+        <?php endforeach; ?>
 </body>
 </html>
