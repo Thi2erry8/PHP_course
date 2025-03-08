@@ -2,9 +2,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
- include('./inc/database.php')
+ include('./inc/database.php');
 
-
+ mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
