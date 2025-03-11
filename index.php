@@ -31,6 +31,6 @@ ini_set('display_errors', 1);
                  </div> -->
 
         <?php //endforeach ?>
-        <!-- COOCKIE-->
+        <!-- fileSystem-->
 </body>
 </html>
